@@ -1,0 +1,24 @@
+{% extends 'cosmox/base.html' %}
+{% block title %}Informacje o galaktyce{% endblock %}
+
+{% block body %}
+  <img src="{{ galaxy.picture.url }}" class="img-responsive">
+
+  <h1>{{ galaxy }}</h1>
+  <h3>konstelacja: {{ galaxy.constellation }}</h3>
+  <h3>Rodzaj galaktyki: {{ galaxy.galaxy_type }}</h3>
+  <h3>Średnica galaktyki: {{ galaxy.diameter }}</h3>
+  <h3>Liczba gwiazd w galaktyce: {{ galaxy.num_of_starts }}</h3>
+  <h3>Masa galaktyki: {{ galaxy.mass }}</h3>
+
+  <h3>Układy planetarne galaktyki {{ galaxy.name }}</h3>
+  <ul>
+    {% if galaxy.planetarysystem_set.all %}
+      {% for system in galaxy.planetarysystem_set.all %}
+        <li>{{ system }}</li>
+      {% endfor %}
+    {% else %}
+      <h3>Ta galaktyka nie ma zdefiniowanych układów planetarnych</h3>
+    {% endif %}
+  </ul>
+{% endblock %}
