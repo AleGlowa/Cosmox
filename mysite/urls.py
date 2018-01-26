@@ -9,7 +9,7 @@ urlpatterns = [
     # url do aplikacji
     url(r'^cosmox/', include('cosmox.urls')),
     # url do rest api
-    url(r'api/cosmox/', include('cosmox.api.urls'))
+    url(r'^api/cosmox/', include('cosmox.api.urls'))
 ]
 
 # W trybie debugowania zapisuj pliki medialne do katalogu media

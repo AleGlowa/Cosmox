@@ -13,7 +13,7 @@ urlpatterns = [
     # /galaxy/add/ = widok formularza do tworzenia nowego obiektu
     url(r'galaxy/add/$', views.GalaxyCreate.as_view(), name='galaxy-add'),
 
-    # /galaxy/<pk>/ = widok formularza do aktualizowania(tworzenia nowego) obiektu
+    # /galaxy/<pk>/ = widok formularza do aktualizowania obiektu
     url(r'galaxy/(?P<pk>\d+)/$', views.GalaxyUpdate.as_view(), name='galaxy-update'),
 
     # /galaxy/<pk>/delete/ = przekierowanie na chwilę do adresu po usunięciu obiektu
